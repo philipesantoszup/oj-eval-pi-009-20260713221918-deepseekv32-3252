@@ -77,12 +77,12 @@ public:
 		}
 		// return the distance between two iterators,
 		// if these two iterators point to different vectors, throw invaild_iterator.
-		int operator-(const iterator &rhs) const
+		difference_type operator-(const iterator &rhs) const
 		{
 			if (parent_ != rhs.parent_) {
 				throw invalid_iterator();
 			}
-			return static_cast<int>(ptr_ - rhs.ptr_);
+			return ptr_ - rhs.ptr_;
 		}
 		iterator& operator+=(const int &n)
 		{
@@ -195,12 +195,12 @@ public:
 		}
 		// return the distance between two iterators,
 		// if these two iterators point to different vectors, throw invaild_iterator.
-		int operator-(const const_iterator &rhs) const
+		difference_type operator-(const const_iterator &rhs) const
 		{
 			if (parent_ != rhs.parent_) {
 				throw invalid_iterator();
 			}
-			return static_cast<int>(ptr_ - rhs.ptr_);
+			return ptr_ - rhs.ptr_;
 		}
 		const_iterator& operator+=(const int &n)
 		{
